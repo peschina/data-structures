@@ -36,8 +36,4 @@ class Stack {
   }
 }
 
-const reverseString = (string) => {};
-
-const isExpressionBalanced = (string) => {};
-
 exports.Stack = Stack;
