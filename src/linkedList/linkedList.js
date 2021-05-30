@@ -84,6 +84,22 @@ class LinkedList {
     this.last = this.first;
     this.first = lastCopy;
   }
+
+  findKthFromEnd(int) {
+    let current = this.first;
+    let secondPointer = this.first;
+
+    for (let i = 0; i < int; i++) {
+      if (!secondPointer.next) return null;
+      secondPointer = secondPointer.next;
+    }
+
+    while (current) {
+      if (!secondPointer.next) return current;
+      secondPointer = secondPointer.next;
+      current = current.next;
+    }
+  }
 }
 
 class Node {

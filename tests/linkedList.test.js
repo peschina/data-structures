@@ -129,10 +129,23 @@ describe("LinkedList", () => {
     linkedList.addLast(3);
     linkedList.addLast(4);
     linkedList.reverse();
-    expect(linkedList.toString()).toBe('4-(3),3-(2),2-(1),1-(null)');
+    expect(linkedList.toString()).toBe("4-(3),3-(2),2-(1),1-(null)");
     expect(linkedList.indexOf(1)).toBe(3);
     expect(linkedList.indexOf(2)).toBe(2);
     expect(linkedList.indexOf(3)).toBe(1);
     expect(linkedList.indexOf(4)).toBe(0);
+  });
+  it("should return kth node from end of linked list", () => {
+    const linkedList = new LinkedList();
+    linkedList.addLast(1);
+    linkedList.addLast(2);
+    linkedList.addLast(3);
+    linkedList.addLast(4);
+    linkedList.addLast(5);
+    linkedList.addLast(6);
+    linkedList.addLast(7);
+    expect(linkedList.findKthFromEnd(3).value).toBe(4);
+    expect(linkedList.findKthFromEnd(4).value).toBe(3);
+    expect(linkedList.findKthFromEnd(8)).toBe(null);
   });
 });
